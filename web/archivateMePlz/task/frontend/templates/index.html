@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/style.css">
+    <title>ArchivateMePlz</title>
+</head>
+<body>
+    <h2>Archivator</h2>
+    <p class="lead">Drop me any<b>files</b></p>
+
+    <!-- Upload  -->
+    <form id="file-upload-form" class="uploader">
+    <input id="file-upload" type="file" name="fileUpload" multiple>
+
+    <label for="file-upload" id="file-drag">
+        <img id="file-image" src="#" alt="Preview" class="hidden">
+        <div id="start">
+        <i class="fa fa-download" aria-hidden="true"></i>
+        <div>Select a file or drag here</div>
+        </div>
+        <div id="response" class="hidden">
+        <div id="messages"></div>
+        <progress class="progress" id="file-progress" value="0">
+            <span>0</span>%
+        </progress>
+        </div>
+    </label>
+    <button id="arhivate-btn" class="btn btn-primary" type="submit">Archivate</button>
+    </form>
+    <div id="output"></div>
+    <script>
+        const fileUpload = document.getElementById('file-upload');
+        const fileNameDisplay = document.getElementById('output');
+
+        fileUpload.addEventListener('change', function(event) {
+            const files = event.target.files;
+            if (files.length > 0) {
+                let output = "";
+                for (let i = 0; i < files.length; i++) {
+                    output += files[i].name + "<br>";
+                }
+                fileNameDisplay.innerHTML = `<b>Selected files</b><br>${output}`;
+            } else {
+                fileNameDisplay.innerHTML = '';
+            }
+        });
+    </script>
+    <script src="static/js/upload.js"></script>
+</body>
+</html>

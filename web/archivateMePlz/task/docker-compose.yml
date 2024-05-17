@@ -1,0 +1,41 @@
+version: '3'
+services:
+  frontend:
+    build: 
+      context: frontend
+      dockerfile: Dockerfile
+    ports:
+      - 127.0.0.1:8000:8000
+    restart: on-failure
+    networks:
+      - mynetwork
+
+  backend:
+    build:
+      context: backend
+      dockerfile: Dockerfile
+    volumes:
+      - ./flag:/flag
+    ports:
+      - 127.0.0.1:5555:5555
+    restart: on-failure
+    networks:
+      - mynetwork
+
+  nginx:
+    image: nginx
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+      - ./frontend/static/css:/static/css
+      - ./frontend/static/js:/static/js
+    ports:
+      - 80:80
+    depends_on:
+      - frontend
+      - backend
+    restart: on-failure
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
