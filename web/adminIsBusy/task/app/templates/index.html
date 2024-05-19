@@ -1,0 +1,11 @@
+{{ template "head" . }}
+<body>
+    {{ template "header" . }}
+    <h1>Hello, {{ .username }}</h1>
+    {{ if .flag }}
+        <p>Hey, admin! Your flag: {{ .flag }}</p>
+    {{ else }}
+        <p>You are not admin!</p>
+    {{ end }}
+</body>
+</html>
