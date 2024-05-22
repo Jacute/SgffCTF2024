@@ -24,3 +24,6 @@ environment:
 ![alt text](img/sign.png)
 
 Далее вставляем новый access_token в cookie, обновляем страницу, получаем флаг :P
+
+## Flag
+`SgffCTF{jwt_t0ken5_4r3_s1mpl3}`

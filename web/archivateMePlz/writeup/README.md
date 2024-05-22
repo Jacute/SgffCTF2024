@@ -14,6 +14,9 @@
 
 ![alt text](img/exploit.png)
 
+## Flag
+`SgffCTF{p4th_tr4v3rs4l_4b0bus}`
+
 ## Comment
 
 Уязвимая функция чтения файла:

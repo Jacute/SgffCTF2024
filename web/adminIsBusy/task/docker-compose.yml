@@ -5,7 +5,7 @@ services:
       context: app
       dockerfile: Dockerfile
     environment:
-      - FLAG=SgffCTF{jwt_t0ken5_4r3_s1mpl3}
+      - FLAG=SgffCTF{REDACTED}
       - JWT_KEY=Abobik552
     ports:
       - 127.0.0.1:8081:8081
