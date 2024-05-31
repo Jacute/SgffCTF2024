@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Page</title>
+    <style>
+        body {
+            background-color: orange;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        #qrcode {
+            margin-bottom: 20px;
+        }
+        .page-number {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            font-size: 18px;
+            padding: 10px;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div id="qrcode"></div>
+    <div class="page-number"><img src="/qrs/{{ .progress }}.png" alt="error"><p style="text-align: center;">{{ .progress }}/100</p></div>
+    <form id="qrForm" action="" method="post">
+        <input name="answer" type="text" placeholder="Введите текст здесь">
+        <button type="submit">Submit</button>
+    </form>
+    <p id="result"></p>
+    <script>
+        var form = document.getElementById("qrForm");
+        form.addEventListener("submit", (event) => {
+            event.preventDefault();
+
+            var formData = new FormData(form);
+
+            fetch("/", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.json()) // Парсим ответ сервера как JSON
+            .then(data => {
+                if (data["error"]) {
+                    document.getElementById("result").textContent = data.error;
+                } else {
+                    location.reload();
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
+</body>
+</html>
