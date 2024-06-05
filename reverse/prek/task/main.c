@@ -4,15 +4,16 @@
 #include <malloc.h>
 
 
-const char* flag = "SgffCTF{REDACTED}";
+const char* flag = "SgffCTF{sr4nd_1s_bull5h1t}";
 
 
 char* encrypt(const char* text) {
-    char* buf = malloc(strlen(text) + 5 * strlen(text));
+    int textLen = strlen(text);
+    char* buf = malloc(textLen + 5 * textLen);
     int step;
 
     int bufIndex = 0;
-    for (int i = 0; i < strlen(text); i++) {
+    for (int i = 0; i < textLen; i++) {
         step = rand() % 5;
         
         int j;
@@ -43,5 +44,4 @@ void main() {
     char* cipherText = encrypt(flag);
     writeFile("output.txt", cipherText);
     free(cipherText);
-    //char* cipherText = encrypt(flag);
 }

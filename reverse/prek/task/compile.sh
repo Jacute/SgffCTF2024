@@ -1,0 +1,1 @@
+gcc main.c -m64 -no-pie -g -o prek
