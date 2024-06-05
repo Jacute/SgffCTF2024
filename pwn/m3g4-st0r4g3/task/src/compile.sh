@@ -1,0 +1,1 @@
+gcc main.c -m64 -fno-stack-protector -no-pie -g -o m3g4-st0r4g3

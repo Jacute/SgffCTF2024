@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  m3g4-st0r4g3:
+    build: .
+    platform: linux/amd64
+    cpus: 1
+    mem_limit: 256m
+    ports:
+      - 6969:9000
