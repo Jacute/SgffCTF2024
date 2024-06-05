@@ -5,7 +5,7 @@ services:
       context: app
       dockerfile: Dockerfile
     environment:
-      - FLAG=SgffCTF{REDACTED}
+      - FLAG=SgffCTF{jwt_t0ken5_4r3_s1mpl3}
       - JWT_KEY=Abobik552
     ports:
       - 127.0.0.1:8081:8081
@@ -20,7 +20,7 @@ services:
       - ./app/static/css:/static/css
       - ./app/static/js:/static/js
     ports:
-      - 80:80
+      - 1488:80
     depends_on:
       - app
     restart: on-failure
