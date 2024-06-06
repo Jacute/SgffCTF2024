@@ -9,7 +9,7 @@ services:
     volumes:
       - shared_volume:/app/app/static
       - ./flag:/flag
-    restart: always
+    restart: on-failure
   nginx:
     image: nginx
     volumes:
@@ -19,7 +19,7 @@ services:
       - 5554:80
     depends_on:
       - app
-    restart: always
+    restart: on-failure
 
 volumes:
   shared_volume:
