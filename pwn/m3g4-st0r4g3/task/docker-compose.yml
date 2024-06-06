@@ -8,3 +8,4 @@ services:
     mem_limit: 256m
     ports:
       - 6969:9000
+    restart: on-failure
