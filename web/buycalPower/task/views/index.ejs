@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Озера</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="background">
+        <div class="lake-container">
+            <div class="lake">
+                <img src="/static/img/ladozhskoe.png" alt="Lake 2">
+                <p>Ладожское озеро</p>
+                <button id="lake-button" name="ladozhskoe">Испить водицы</button>
+            </div>
+            <div class="lake">
+                <img src="/static/img/onezhskoe.png" alt="Lake 3">
+                <p>Онежское озеро</p>
+                <button id="lake-button" name="onezhskoe">Испить водицы</button>
+            </div>
+            <div class="lake">
+                <img src="/static/img/buycal.png" alt="Lake 1">
+                <p>Озеро Байкал</p>
+                <button id="lake-button" name="buycal">Испить водицы</button>
+            </div>
+        </div>
+        <p id="result" class="result hidden">
+        
+        </p>
+    </div>
+    <script>
+        const buttons = document.querySelectorAll('#lake-button');
+        const resultP = document.getElementById("result");
+
+        fetch("/lakes").then(async res => {
+            const json = await res.json();
+            buttons.forEach(button => {
+                const lake = button.getAttribute('name');
+                if (json[lake].isDrinked) {
+                    button.setAttribute('disabled', '');
+                }
+            });
+        });
+
+        buttons.forEach(button => {
+            button.addEventListener('click', event => {
+                event.preventDefault();
+
+                const lake = button.getAttribute('name');
+                fetch("/drink?lake=" + lake).then(async res => {
+                    const json = await res.json();
+                    if (json["status"] == "BAD") {
+                        resultP.textContent = json["error"];
+                        resultP.classList.remove("hidden");
+                    } else if (json["status"] == "OK") {
+                        resultP.textContent = "Ты испил священной водицы!";
+                        resultP.classList.remove("hidden");
+                        button.setAttribute("disabled", "");
+                    }
+                }).catch(async e => console.error(await e.message));
+            })
+        })
+    </script>
+</body>
+</html>
