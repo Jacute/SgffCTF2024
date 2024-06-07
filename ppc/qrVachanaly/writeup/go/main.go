@@ -13,7 +13,7 @@ import (
 	"github.com/go-resty/resty/v2"
 )
 
-const host = "http://localhost:1338"
+const host = "http://79.141.65.118:1338"
 
 func decodeQr(qrPath string) (string, error) {
 	file, err := os.Open(qrPath)

@@ -1,18 +1,18 @@
 version: '3'
 services:
-  app:
+  qrvachanaly_app:
     build:
       context: app
       dockerfile: Dockerfile
     environment:
-      - FLAG=SgffCTF{REDACTED}
+      - FLAG=SgffCTF{1_c4n_dec0d3_qr}
     ports:
       - 127.0.0.1:8080:8080
     restart: "no"
     networks:
       - mynetwork
 
-  nginx:
+  qrvachanaly_nginx:
     image: nginx
     volumes:
       - ./nginx.conf:/etc/nginx/conf.d/default.conf
@@ -21,7 +21,7 @@ services:
     ports:
       - 1338:80
     depends_on:
-      - app
+      - qrvachanaly_app
     restart: "no"
     networks:
       - mynetwork
