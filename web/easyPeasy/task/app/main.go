@@ -18,5 +18,5 @@ func main() {
 	router.GET("/part1", handlers.GetSecret1)
 	router.GET("/part2", handlers.GetSecret2)
 
-	log.Fatal(http.ListenAndServe(":8080", router))
+	log.Fatal(http.ListenAndServe(":8083", router))
 }
