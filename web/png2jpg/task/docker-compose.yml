@@ -1,16 +1,16 @@
 version: '3'
 services:
-  app:
+  png2jpg_app:
     build:
       context: .
       dockerfile: Dockerfile
     ports:
-      - 127.0.0.1:8080:8080
+      - 127.0.0.1:8084:8084
     volumes:
       - shared_volume:/app/app/static
       - ./flag:/flag
     restart: on-failure
-  nginx:
+  png2jpg_nginx:
     image: nginx
     volumes:
       - ./nginx.conf:/etc/nginx/conf.d/default.conf
@@ -18,7 +18,7 @@ services:
     ports:
       - 5554:80
     depends_on:
-      - app
+      - png2jpg_app
     restart: on-failure
 
 volumes:
