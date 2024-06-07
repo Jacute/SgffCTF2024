@@ -5,12 +5,12 @@ import re
 dct = {}
 
 
-ip = '127.0.0.1'
+ip = '79.141.65.118'
 port = 5553
 io = remote(ip, port)
 
 # get dictionary
-for i in range(1000):
+for i in range(200):
     question = io.recvline()
     io.sendline(b"1")
     answer = re.search(r'is\s+(.+)', io.recvline().decode()).group(1)
