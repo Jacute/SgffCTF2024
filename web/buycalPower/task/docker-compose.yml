@@ -1,6 +1,6 @@
 version: '3'
 services:
-  app:
+  buycalpower_app:
     build:
       context: .
       dockerfile: Dockerfile
@@ -13,14 +13,14 @@ services:
     networks:
       - mynetwork
 
-  nginx:
+  buycalpower_nginx:
     image: nginx
     volumes:
       - ./nginx.conf:/etc/nginx/conf.d/default.conf
     ports:
       - 1400:80
     depends_on:
-      - app
+      - buycalpower_app
     restart: on-failure
     networks:
       - mynetwork
