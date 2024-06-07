@@ -13,7 +13,7 @@ func GetIndex(c *gin.Context) {
 
 	username, exists := c.Get("username")
 	if !exists {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to get username"})
+		c.Redirect(301, "/login")
 		return
 	}
 

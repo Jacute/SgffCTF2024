@@ -1,6 +1,6 @@
 version: '3'
 services:
-  app:
+  adminisbusy_app:
     build:
       context: app
       dockerfile: Dockerfile
@@ -13,7 +13,7 @@ services:
     networks:
       - mynetwork
 
-  nginx:
+  adminisbusy_nginx:
     image: nginx
     volumes:
       - ./nginx.conf:/etc/nginx/conf.d/default.conf
@@ -22,7 +22,7 @@ services:
     ports:
       - 1488:80
     depends_on:
-      - app
+      - adminisbusy_app
     restart: on-failure
     networks:
       - mynetwork
