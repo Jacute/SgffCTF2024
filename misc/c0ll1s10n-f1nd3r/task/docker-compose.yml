@@ -1,0 +1,24 @@
+version: '3'
+services:
+  c0ll1s10n-f1nd3r:
+    build:
+      context: app
+      dockerfile: Dockerfile
+    ports:
+      - 127.0.0.1:9999:9999
+    networks:
+      - mynetwork
+    restart: on-failure
+  nginx:
+    image: nginx
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - 80:80
+    depends_on:
+      - c0ll1s10n-f1nd3r
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:

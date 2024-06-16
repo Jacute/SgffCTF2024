@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logo Checker</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <!--ring div starts here-->
+<div class="ring">
+    <i style="--clr:#00ff0a;"></i>
+    <i style="--clr:#ff0057;"></i>
+    <i style="--clr:#fffd44;"></i>
+    <div class="checker">
+      <h2 class="header">"Продам гараж за флаги" logo checker</h2>
+      <div class="inputBx">
+        <input type="file" name="file" id="file">
+      </div>
+      <div class="inputBx">
+        <input type="submit" value="Send" id="submit-btn">
+      </div>
+      <div id="info" class="info">
+        
+      </div>
+    </div>
+  </div>
+  <script>
+    const submit = document.getElementById("submit-btn");
+    const fileInput = document.getElementById("file");
+    const info = document.getElementById("info");
+
+    submit.addEventListener("click", event => {
+        event.preventDefault();
+
+        const file = fileInput.files[0];
+        if (!file) {
+            info.innerText = "No file selected!"
+            return;
+        }
+
+        const reader = new FileReader();
+        reader.onload = (uploadFileEvent) => {
+            const arrayBuffer = uploadFileEvent.target.result;
+            const bytes = new Uint8Array(arrayBuffer);
+
+            const formData = new FormData();
+            formData.append('file', new Blob([bytes]), file.name);
+
+            fetch('/check', {
+                method: 'POST',
+                body: formData
+            }).then(async res => {
+                info.innerText = await res.text();
+            }).catch(error => {
+                console.error(error);
+            });
+        }
+
+        fileInput.value = "";
+
+        reader.readAsArrayBuffer(file);
+    });
+  </script>
+</body>
+</html>
