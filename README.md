@@ -49,3 +49,5 @@
 | [m4g1c](forensics/m4g1c) | forensics | [@jacuteglinomes](https://t.me/jacuteglinomes) |
 | [f0r35t](steg/f0r35t) | steg | [@jacuteglinomes](https://t.me/jacuteglinomes) |
 | [str4ng3-drum-p4rt](steg/str4ng3-drum-p4rt) | steg | [@jacuteglinomes](https://t.me/jacuteglinomes) |
+| [abc_123_b](osint/abc_123_b) | osint | [@ddizey](https://t.me/ddizey) |
+| [GoodPresent](osint/GoodPresent) | osint | [@ddizey](https://t.me/ddizey) |
