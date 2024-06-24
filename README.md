@@ -40,6 +40,7 @@
 | [m3g4-st0r4g3](pwn/m3g4-st0r4g3) | pwn | [@jacuteglinomes](https://t.me/jacuteglinomes) |
 | [pneuma](pwn/pneuma) | pwn | [@jacuteglinomes](https://t.me/jacuteglinomes) |
 | [mafioznik](pwn/mafioznik) | pwn | [@jacuteglinomes](https://t.me/jacuteglinomes) |
+| [sh3llc0d3r](pwn/sh3llc0d3r) | pwn | [@jacuteglinomes](https://t.me/jacuteglinomes) |
 | [qrVachanaly](ppc/qrVachanaly) | ppc | [@jacuteglinomes](https://t.me/jacuteglinomes) |
 | [toolFan](ppc/toolFan) | ppc | [@jacuteglinomes](https://t.me/jacuteglinomes) |
 | [1000 FILES? REALLY?](misc/1000+FILES?+REALLY?) | misc | [@jacuteglinomes](https://t.me/jacuteglinomes) |
