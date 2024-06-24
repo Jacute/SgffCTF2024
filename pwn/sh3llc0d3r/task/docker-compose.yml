@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  sh3llc0d3r:
+    build: .
+    platform: linux/amd64
+    cpus: 1
+    mem_limit: 256m
+    ports:
+      - 11665:9000
+    restart: "no"
