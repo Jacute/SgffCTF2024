@@ -55,6 +55,7 @@
 | [str4ng3-drum-p4rt](steg/str4ng3-drum-p4rt)                               | steg      | [@jacuteglinomes](https://t.me/jacuteglinomes) |
 | [abc_123_b](osint/abc_123_b)                                              | osint     | [@ddizey](https://t.me/ddizey)                 |
 | [GoodPresent](osint/GoodPresent)                                          | osint     | [@ddizey](https://t.me/ddizey)                 |
+| [break-time](osint/break-time)                                            | osint     | [@ddizey](https://t.me/ddizey)                 |
 | [IThinkThisExponentIsLargeEnough](crypto/IThinkThisExponentIsLargeEnough) | crypto    | [@OneDude](https://t.me/PetrRezepov)           |
 | [PictureOfTheKey](crypto/PictureOfTheKey)                                 | crypto    | [@OneDude](https://t.me/PetrRezepov)           |
 | [SymetricCryptoIsCool](crypto/SymetricCryptoIsCool)                       | crypto    | [@OneDude](https://t.me/PetrRezepov)           |
