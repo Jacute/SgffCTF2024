@@ -1,0 +1,8 @@
+version: "3"
+services:
+  symetriccryptoiscool:
+    build: .
+    container_name: symetriccryptoiscool
+    restart: on-failure
+    ports:
+      - 22222:22222
