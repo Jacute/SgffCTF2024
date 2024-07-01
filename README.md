@@ -51,6 +51,7 @@
 | [c0ll1s10n-f1nd3r](misc/c0ll1s10n-f1nd3r)                                 | misc      | [@jacuteglinomes](https://t.me/jacuteglinomes) |
 | [s3cr3t](forensics/s3cr3t)                                                | forensics | [@jacuteglinomes](https://t.me/jacuteglinomes) |
 | [m4g1c](forensics/m4g1c)                                                  | forensics | [@jacuteglinomes](https://t.me/jacuteglinomes) |
+| [StrangeZipArchive](forensics/StrangeZipArchive)                          | forensics | [@OneDude](https://t.me/PetrRezepov)           |
 | [f0r35t](steg/f0r35t)                                                     | steg      | [@jacuteglinomes](https://t.me/jacuteglinomes) |
 | [str4ng3-drum-p4rt](steg/str4ng3-drum-p4rt)                               | steg      | [@jacuteglinomes](https://t.me/jacuteglinomes) |
 | [abc_123_b](osint/abc_123_b)                                              | osint     | [@ddizey](https://t.me/ddizey)                 |
