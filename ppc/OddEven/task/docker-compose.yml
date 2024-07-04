@@ -1,8 +1,7 @@
 version: "3"
 services:
-  symetriccryptoiscool:
+  oddeven:
     build: .
-    container_name: OddEven
     restart: on-failure
     ports:
       - 11111:11111
