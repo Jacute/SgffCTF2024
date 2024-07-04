@@ -10,7 +10,7 @@
 - Организаторы: **Продам гараж за флаги**
 - Спонсоры: **Дмитрий Лазарев** ([@PoluchiUltoiVRoju](https://t.me/PoluchiUltoiVRoju))
 
-# Результаты SgffCTF АБс-322
+# Результаты SgffCTF АБс-322 (и гостевой команды Хмельные войны)
 
 ![Top](scoreboard/topABs-322.png)
 
