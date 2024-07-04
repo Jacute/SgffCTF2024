@@ -19,7 +19,7 @@ func AuthMiddleware() gin.HandlerFunc {
 
 		token, err := utils.CheckJwt(access_token)
 		if err != nil {
-			c.JSON(http.StatusInternalServerError, gin.H{"error": "Unauthorized"})
+			c.JSON(http.StatusInternalServerError, gin.H{"error": "Incorrect access_token"})
 			return
 		}
 
