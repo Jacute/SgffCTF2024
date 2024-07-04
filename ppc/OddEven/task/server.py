@@ -31,7 +31,7 @@ def handle_client(conn, addr):
             break
             
         if count == 100:
-            conn.sendall(b'SgffCTF{N0t_B@D_For_fir$t_t1me}')
+            conn.sendall(b'SgffCTF{N0t_B@D_For_fir$t_t1me}\n')
             break
     conn.close()
     print(f"Disconnected from {addr}")
