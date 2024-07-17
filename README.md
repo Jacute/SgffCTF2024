@@ -12,11 +12,11 @@
 
 # Результаты SgffCTF АБс-322
 
-![Top](scoreboard/topABs-322.png)
+[Top](scoreboard/topABs-322.png)
 
 # Результаты SgffCTF Куйбышев
 
-![Top](scoreboard/top.png)
+[Top](scoreboard/top.png)
 
 # Задания
 
