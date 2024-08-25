@@ -1,6 +1,7 @@
 package utils
 
 import (
+	"errors"
 	"qrVachanaly/config"
 	"time"
 
@@ -8,14 +9,23 @@ import (
 	"github.com/google/uuid"
 )
 
+var (
+	JwtError        = errors.New("JWT error")
+	JwtExpiredError = errors.New("JWT expired")
+)
+
 func CheckJwt(access_token string) (*jwt.Token, error) {
 	if access_token == "" {
-		return nil, &JwtError{message: "Token is empty string"}
+		return nil, JwtError
 	}
 
 	token, err := jwt.Parse(access_token, func(token *jwt.Token) (interface{}, error) {
 		return config.AppConfig.JwtKey, nil
 	})
+	claims, ok := token.Claims.(jwt.MapClaims)
+	if ok && int64(claims["exp"].(float64)) < time.Now().Unix() {
+		return nil, JwtExpiredError
+	}
 	if err != nil || !token.Valid {
 		return nil, err
 	}

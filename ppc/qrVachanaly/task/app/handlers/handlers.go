@@ -1,7 +1,6 @@
 package handlers
 
 import (
-	"fmt"
 	"net/http"
 	"qrVachanaly/config"
 	"qrVachanaly/qrGenerator"
@@ -40,7 +39,6 @@ func PostIndex(c *gin.Context) {
 	}
 
 	answer := c.PostForm("answer")
-	fmt.Println(answer, qrGenerator.QrData[progressInt])
 	if answer == qrGenerator.QrData[progressInt] {
 		new_access_token, err := utils.CreateJwt(progressInt + 1)
 
